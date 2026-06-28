@@ -26,7 +26,7 @@
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        用户浏览器                            │
-│                   http://localhost:8080                      │
+│          https://gallstone-sacrament-mandatory.ngrok-free.dev │
 └──────────────────────────┬──────────────────────────────────┘
                            │ HTTP
 ┌──────────────────────────▼──────────────────────────────────┐
@@ -214,24 +214,21 @@ mvn spring-boot:run
 
 #### 第 4 步：访问应用
 
-打开浏览器访问：**http://localhost:8080**
+打开浏览器访问：**https://gallstone-sacrament-mandatory.ngrok-free.dev**
 
 ### 方式三：公网访问（ngrok）
 
-如需让外部访问本地服务，可使用 ngrok 内网穿透：
+当前已配置 ngrok 公网访问：
+
+**🔗 访问地址：https://gallstone-sacrament-mandatory.ngrok-free.dev**
 
 ```bash
-# 1. 下载 ngrok
-# https://ngrok.com/download
-
+# 自行搭建时的操作步骤：
+# 1. 下载 ngrok → https://ngrok.com/download
 # 2. 配置 authtoken
 ngrok config add-authtoken <your-token>
-
 # 3. 启动穿透
 ngrok http 8080
-
-# 4. 使用生成的公网地址访问
-# 例如：https://xxxx.ngrok-free.dev
 ```
 
 ---
