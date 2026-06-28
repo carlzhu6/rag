@@ -1,0 +1,23 @@
+# Build
+target/
+*.class
+*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Maven wrapper jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# Uploads & logs
+uploads/
+app.log
+
+# OS
+.DS_Store
+Thumbs.db

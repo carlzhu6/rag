@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智能客服</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- 登录/注册页面 -->
+    <div id="auth-page" class="page">
+        <div class="auth-container">
+            <h1>AI 智能客服</h1>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">登录</button>
+                <button class="tab-btn" data-tab="register">注册</button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <input type="text" id="login-username" placeholder="用户名" required>
+                <input type="password" id="login-password" placeholder="密码" required>
+                <button type="submit" class="btn-primary">登录</button>
+            </form>
+
+            <form id="register-form" class="auth-form hidden">
+                <input type="text" id="reg-username" placeholder="用户名" required>
+                <input type="password" id="reg-password" placeholder="密码" required>
+                <input type="text" id="reg-nickname" placeholder="昵称（选填）">
+                <button type="submit" class="btn-primary">注册</button>
+            </form>
+
+            <p id="auth-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- 主聊天页面 -->
+    <div id="main-page" class="page hidden">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>对话列表</h2>
+                <button id="new-chat-btn" class="btn-icon" title="新对话">+</button>
+            </div>
+            <div id="conversation-list" class="conversation-list">
+                <!-- 动态填充 -->
+            </div>
+            <div class="sidebar-footer">
+                <button id="manage-docs-btn" class="btn-secondary">📚 知识库管理</button>
+                <button id="logout-btn" class="btn-secondary">退出登录</button>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            <div id="chat-header" class="chat-header">
+                <h3>选择一个对话或创建新对话</h3>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="welcome-msg">
+                    <h2>👋 欢迎使用 AI 智能客服</h2>
+                    <p>我可以根据知识库内容回答你的问题。请先上传文档到知识库，然后开始对话。</p>
+                </div>
+            </div>
+            <div id="chat-input-area" class="chat-input-area hidden">
+                <div class="input-wrapper">
+                    <textarea id="message-input" placeholder="输入你的问题..." rows="1"></textarea>
+                    <button id="send-btn" class="btn-send">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文档管理弹窗 -->
+    <div id="doc-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>知识库文档管理</h3>
+                <button class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="file-input" accept=".pdf,.doc,.docx,.txt,.md" hidden>
+                    <p>📄 点击或拖拽文件到此处上传</p>
+                    <p class="hint">支持 PDF、Word、TXT、Markdown 格式</p>
+                </div>
+                <div id="doc-list" class="doc-list">
+                    <!-- 动态填充 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
